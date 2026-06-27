@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>교육 자원의 효율적 활용 방안 탐구</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f6f3;
+      --surface: #ffffff;
+      --border: #e4e2dc;
+      --text-primary: #1a1916;
+      --text-secondary: #6b6860;
+      --text-muted: #a09e98;
+      --accent: #2d6a4f;
+      --accent-light: #eaf4ef;
+      --accent-border: #b7dece;
+      --warn: #92681a;
+      --warn-bg: #fdf4e3;
+      --warn-border: #e8d09a;
+      --radius: 14px;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.25rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 560px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      border: 1px solid var(--accent-border);
+      border-radius: 99px;
+      padding: 5px 16px;
+      margin-bottom: 1.75rem;
+    }
+
+    h1 {
+      font-size: clamp(20px, 5vw, 28px);
+      font-weight: 400;
+      line-height: 1.45;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.875rem;
+      max-width: 440px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 3rem;
+      font-weight: 300;
+    }
+
+    .cards {
+      display: flex;
+      gap: 16px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .card {
+      flex: 1;
+      max-width: 230px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 1.25rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.18s ease, transform 0.14s ease, box-shadow 0.18s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      border-color: var(--accent-border);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+    }
+
+    .card.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    .flag {
+      font-size: 38px;
+      line-height: 1;
+    }
+
+    .lang-name {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-top: 2px;
+    }
+
+    .lang-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .coming-badge {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--warn);
+      background: var(--warn-bg);
+      border: 1px solid var(--warn-border);
+      border-radius: 99px;
+      padding: 3px 12px;
+      margin-top: 2px;
+    }
+
+    .arrow {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-top: auto;
+      padding-top: 8px;
+      transition: color 0.15s;
+    }
+
+    .card:hover .arrow {
+      color: var(--accent);
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+      margin: 3rem 0 1.5rem;
+    }
+
+    .footer {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    @media (max-width: 420px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        max-width: 100%;
+        width: 100%;
+        flex-direction: row;
+        padding: 1.25rem 1.5rem;
+        gap: 16px;
+        text-align: left;
+        align-items: center;
+      }
+      .flag { font-size: 30px; }
+      .arrow { margin-top: 0; padding-top: 0; margin-left: auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="eyebrow">프로젝트 결과물</span>
+
+    <h1>교육 자원의 효율적 활용 방안 탐구</h1>
+
+    <p class="subtitle">한번씩 읽어봐주세요.<br>언어를 선택해 결과물을 확인하세요.</p>
+
+    <div class="cards">
+      <a class="card" href="https://canva.link/npugp76ysbu72je" target="_blank" rel="noopener">
+        <div class="flag">🇰🇷</div>
+        <div class="lang-name">한국어</div>
+        <div class="lang-sub">Korean version</div>
+        <div class="arrow">↗</div>
+      </a>
+
+      <div class="card disabled" aria-disabled="true">
+        <div class="flag">🇺🇸</div>
+        <div class="lang-name">English</div>
+        <div class="lang-sub">영어 버전</div>
+        <span class="coming-badge">준비 중</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <p class="footer">© 2026 · 교육 자원 탐구 프로젝트</p>
+  </div>
+</body>
+</html>
